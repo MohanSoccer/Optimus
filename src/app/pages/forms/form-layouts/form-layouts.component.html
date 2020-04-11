@@ -1,0 +1,37 @@
+<nb-card>
+  <nb-card-header>
+    <div class="d-flex justify-content-between">
+      <h3>{{isEdit ? 'Update' : 'Create'}}</h3>
+      <button routerLink = "/pages/tables/smart-table" style="padding: 4px 11px;" class="btn btn-secondary">
+        <nb-icon icon="arrow-back" pack="eva"></nb-icon> Back
+      </button>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="label">First Name</label>
+        <input [(ngModel)] = "userModel.firstName" name="firstName" type="text" nbInput fullWidth id="exampleInputEmail1" placeholder="Eg: John">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Last Name</label>
+        <input [(ngModel)] = "userModel.lastName" name="lastName" type="text" nbInput fullWidth id="exampleInputPassword1" placeholder="Eg: Doe">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="label">User Name</label>
+        <input [(ngModel)] = "userModel.username" name="username" type="text" nbInput fullWidth id="exampleInputPassword1" placeholder="Eg: JohnDoe">
+      </div>
+         <div class="form-group">
+        <label for="exampleInputPassword1" class="label">Email</label>
+        <input [(ngModel)] = "userModel.email" name="email" type="mail" nbInput fullWidth id="exampleInputPassword1" placeholder="Eg: john@some.com">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputPassword1" class="label">Age</label>
+          <input [(ngModel)] = "userModel.age" name="age" type="number" nbInput fullWidth id="exampleInputPassword1" placeholder="Eg: 18">
+        </div>
+        <div class="text-right">
+      <button (click) = "submit()" type="submit" nbButton status="danger">{{isEdit ? 'Update' : 'Create'}}</button>
+    </div>
+    </form>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+// themes - our custom or/and out of the box themes
+@import 'themes';
+
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/grid';
+
+// loading progress bar theme
+@import './pace.theme';
+
+@import './layout';
+@import './overrides';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+
+  @include ngx-layout();
+  // loading progress bar
+  @include ngx-pace-theme();
+
+  @include nb-overrides();
+};
+
+
+
+.nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding: 1rem!important;
+}
+
+.nb-theme-default nb-menu .menu-item a {
+  color: #ffffff!important;
+}
+
+.nb-theme-default nb-menu .menu-item a.active {
+  background-color: transparent;
+  color: #080808!important;
+}
+.nb-theme-default nb-menu .menu-item a.active .menu-icon {
+  color: #080808!important;
+}
+
+.nb-theme-default nb-menu .menu-item > .menu-items > .menu-item a:hover {
+  color: #060708!important;
+}
+
+.nb-theme-default nb-menu .menu-item a:hover {
+  color: #101010!important;
+}
+
+.nb-theme-default nb-menu .menu-item a:hover .menu-icon {
+  color: #141415!important;
+}
+
+.nb-theme-default nb-menu .menu-item > .menu-items > .menu-item a.active {
+  border-color: #1a1a1b!important;
+  color: #101010!important;
+}
+
+.nb-theme-default [_nghost-hun-c235] .header-container[_ngcontent-hun-c235] .sidebar-toggle[_ngcontent-hun-c235] {
+  color: #fbfbfb!important;
+}
+
+.nb-theme-default nb-user .user-name {
+  color: #e5e7ec!important;
+}
+
+.nb-theme-default nb-menu .menu-item .menu-icon {
+  color: #ffffff!important;
+}
+
+.nb-theme-default nb-layout-header nav a {
+  color: #ffffff !important;
+}
+
+.nb-theme-default nb-sidebar {
+  background-color: #dd412f !important;
+}
+
+.nb-theme-default nb-layout-header {
+  background-color: #dd412f!important;
+}
+
+.nb-theme-default nb-menu {
+  background-color: #dd412f!important;
+}
+
+.nb-theme-default nb-menu .menu-group, .nb-theme-default nb-menu .menu-item a {
+  font-size: 0.9122rem!important;
+  font-weight: 600!important;
+  line-height: 1.5rem!important;
+  padding: 0.75rem 1rem!important;
+}

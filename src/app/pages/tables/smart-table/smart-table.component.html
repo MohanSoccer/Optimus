@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 col-sm-12">
+      <nb-card style="background-color: #4285f4;border-radius: 30px;" class="text-center p-1">
+        <span class="mt-2" style="color: #ffffff;">Orders Confirmed</span>
+        <h3 style="color: #ffffff">2335</h3>
+      </nb-card>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <nb-card style="background-color: #34A853;border-radius: 30px;" class="text-center p-1 ">
+        <span class="mt-2" style="color: #ffffff;">Orders Shipped</span>
+        <h3 style="color: #ffffff">2335</h3>
+      </nb-card>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <nb-card style="background-color: #F4B400;border-radius: 30px;" class="text-center p-1">
+        <span class="mt-2" style="color: #ffffff;">Picklist Generated</span>
+        <h3 style="color: #ffffff">2335</h3>
+      </nb-card>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <nb-card style="background-color: #EA4335;border-radius: 30px;" class="text-center p-1">
+        <span class="mt-2" style="color: #ffffff;">Orders Pending</span>
+        <h3 style="color: #ffffff">2335</h3>
+      </nb-card>
+    </div>
+  </div>
+</div>
+<nb-card>
+  <nb-card-header class="p-2">
+    <div class="d-flex justify-content-between">
+      <div>
+        <!-- <p>First Table</p> -->
+      </div>
+      <div>
+        <nb-icon (click)="filter = !filter" style="cursor: pointer;" icon="funnel" pack="eva"></nb-icon>&nbsp;
+        <button routerLink = "/pages/forms/layouts" style="padding: 4px 11px;" class="btn btn-secondary">
+          <nb-icon icon="person-add" pack="eva"></nb-icon> Create
+        </button>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body *ngIf="!filter">
+    <form>
+      <div class="row">
+          <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="pwd">Name:</label>
+                <input type="password" class="form-control" placeholder="Name" id="pwd">
+              </div>
+            </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" placeholder="Enter email" id="email">
+          </div>
+        </div>
+
+      </div>
+      <div class="text-right">
+          <button style="padding: 4px 11px;" type="submit" class="btn btn-secondary">Cacel</button>&nbsp;
+      <button style="padding: 4px 11px;" type="submit" class="btn btn-secondary"><nb-icon icon="search" pack="eva"></nb-icon> Search</button>
+    </div>
+    </form>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-body>
+    <ng2-smart-table (custom)="onCustomAction($event)" [settings]="settings" [source]="source"
+      >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
